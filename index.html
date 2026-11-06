@@ -18,16 +18,17 @@
 </head>
 <body>
   <div class="ambient" aria-hidden="true"></div>
-  <div id="app" class="app">
-    <header class="top" aria-label="معلومات القراءة">
+  <div class="app">
+    <header class="top" aria-label="عنوان التطبيق">
+      <span class="top-rule" aria-hidden="true"></span>
       <span class="brand">أدعية</span>
-      <span class="page-count" id="counter" aria-live="polite">—</span>
-      <button type="button" id="fontToggle" class="type-button" aria-label="تغيير حجم الخط" title="تغيير حجم الخط">أ‌أ</button>
+      <span class="top-rule" aria-hidden="true"></span>
     </header>
-    <main id="touchSurface" class="touch-surface" role="button" tabindex="0" aria-label="انقر للانتقال إلى الدعاء التالي، واسحب يمينًا للرجوع إلى الدعاء السابق">
+    <main id="touchSurface" class="touch-surface" role="region" tabindex="0"
+      aria-label="للدعاء السابق اضغط يمين الشاشة، وللتالي اضغط يسار الشاشة. السحب يمينًا للسابق ويسارًا للتالي">
       <article class="dua-card" aria-live="polite">
         <div class="medallion" aria-hidden="true"><span></span></div>
-        <p class="eyebrow">أدعية وذكر</p>
+        <p class="eyebrow">دُعَاءٌ وَذِكْرٌ</p>
         <h1 id="duaTitle" class="dua-title">أدعية</h1>
         <div class="rule" aria-hidden="true"><span></span></div>
         <p id="duaText" class="dua-text">جارٍ تحميل الأدعية…</p>
@@ -35,9 +36,26 @@
         <div class="end-flower" aria-hidden="true"><span></span></div>
       </article>
     </main>
-    <footer class="footer">
-      <span class="instruction" id="instruction">المس الشاشة للتالي · اسحب يمينًا للسابق</span>
-      <span class="bar-track"><span id="progress" class="bar-progress"></span></span>
+    <footer class="footer" aria-label="التنقل بين الأدعية">
+      <div class="footer-navigation">
+        <button type="button" id="prevBtn" class="nav-control" aria-label="الدعاء السابق" disabled>
+          <span class="nav-arrow arrow-right" aria-hidden="true"></span>
+          <span>السابق</span>
+        </button>
+        <div id="progressRing" class="progress-ring" role="progressbar"
+          aria-label="التقدم في قراءة الأدعية" aria-valuemin="1" aria-valuemax="1" aria-valuenow="1">
+          <div class="progress-inner">
+            <span id="pageNumber" class="progress-number">01</span>
+            <span id="pageTotal" class="progress-total">من 01</span>
+          </div>
+        </div>
+        <button type="button" id="nextBtn" class="nav-control" aria-label="الدعاء التالي" disabled>
+          <span class="nav-arrow arrow-left" aria-hidden="true"></span>
+          <span>التالي</span>
+        </button>
+      </div>
+      <p class="instruction">اضغط يمينًا للرجوع · ويسارًا للتقدم</p>
+      <span id="counter" class="sr-only" aria-live="polite"></span>
     </footer>
   </div>
   <script src="./app.js" defer></script>
