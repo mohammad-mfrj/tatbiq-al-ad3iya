@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b1626">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ليالي السكينة">
+  <meta name="description" content="أدعية مختارة للقراءة الهادئة بدون إعلانات أو حسابات">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./icon-192.png">
+  <link rel="icon" href="./icon-192.png" type="image/png">
+  <link rel="stylesheet" href="./style.css">
+  <title>ليالي السكينة | أدعية</title>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <div id="app" class="app">
+    <header class="top" aria-label="معلومات القراءة">
+      <span class="brand">ليالي السكينة</span>
+      <span class="page-count" id="counter" aria-live="polite">—</span>
+      <button type="button" id="fontToggle" class="type-button" aria-label="تغيير حجم الخط" title="تغيير حجم الخط">أ‌أ</button>
+    </header>
+    <main id="touchSurface" class="touch-surface" role="button" tabindex="0" aria-label="انقر للانتقال إلى الدعاء التالي، واسحب يمينًا للرجوع إلى الدعاء السابق">
+      <article class="dua-card" aria-live="polite">
+        <div class="medallion" aria-hidden="true"><span></span></div>
+        <p class="eyebrow">أدعية وذكر</p>
+        <h1 id="duaTitle" class="dua-title">ليالي السكينة</h1>
+        <div class="rule" aria-hidden="true"><span></span></div>
+        <p id="duaText" class="dua-text">جارٍ تحميل الأدعية…</p>
+        <p id="duaSource" class="dua-source"></p>
+        <div class="end-flower" aria-hidden="true"><span></span></div>
+      </article>
+    </main>
+    <footer class="footer">
+      <span class="instruction" id="instruction">المس الشاشة للتالي · اسحب يمينًا للسابق</span>
+      <span class="bar-track"><span id="progress" class="bar-progress"></span></span>
+    </footer>
+  </div>
+  <script src="./app.js" defer></script>
+</body>
+</html>

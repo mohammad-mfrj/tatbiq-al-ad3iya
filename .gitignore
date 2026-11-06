@@ -1,0 +1,6 @@
+review/
+tools/
+*.zip
+raw_ocr.json
+*.heic
+*.HEIC

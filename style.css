@@ -1,0 +1,29 @@
+:root{color-scheme:dark;--bg:#0b1626;--bg2:#122438;--gold:#c8a96d;--gold2:#e5cb94;--ivory:#fff7e9;--muted:#c9bfad;--dua-size:clamp(25px,5.1vw,31px)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}body{font-family:"Geeza Pro","Noto Naskh Arabic",Tahoma,serif;background:var(--bg);color:var(--ivory);-webkit-font-smoothing:antialiased}
+.ambient{position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 8%,#24394b 0%,#152638 25%,#0b1626 71%),linear-gradient(#0b1626,#0b1626);z-index:-1}
+.ambient:after{content:"";position:absolute;inset:0;opacity:.25;background-image:radial-gradient(#d2b378 0.5px,transparent .7px);background-size:57px 71px;mask-image:linear-gradient(to bottom,#000,transparent 60%)}
+.app{height:100dvh;min-height:100vh;display:grid;grid-template-rows:auto minmax(0,1fr) auto;max-width:740px;width:100%;grid-template-columns:minmax(0,1fr);margin:auto;padding:env(safe-area-inset-top) max(21px,env(safe-area-inset-right)) env(safe-area-inset-bottom) max(21px,env(safe-area-inset-left))}
+.top{display:flex;align-items:center;gap:12px;justify-content:space-between;min-height:74px;border-bottom:1px solid #a789573d;direction:rtl}
+.brand{color:var(--gold2);font-family:system-ui,"Geeza Pro",sans-serif;font-size:13px;font-weight:700;letter-spacing:.2px}
+.page-count{font:600 13px system-ui,sans-serif;color:var(--muted);direction:ltr;unicode-bidi:isolate}
+.type-button{border:1px solid #b2966657;background:#c7a56a12;color:var(--gold2);width:42px;height:42px;border-radius:50%;font-size:17px;font-weight:800;cursor:pointer}
+.type-button:focus-visible,.touch-surface:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.touch-surface{min-width:0;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#93784b transparent;touch-action:pan-y;cursor:pointer}
+.dua-card{min-width:0;width:100%;max-width:100%;min-height:100%;padding:clamp(24px,5.5vh,55px) 7px 38px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:17px;text-align:center}
+.medallion{height:38px;width:38px;display:grid;place-items:center;border:1px solid #b4935f88;transform:rotate(45deg);border-radius:9px;margin:0 0 10px}
+.medallion span{width:15px;height:15px;border:1px solid #c9a96b8c;border-radius:50%}
+.eyebrow{font:700 12px system-ui,sans-serif;color:var(--gold);letter-spacing:.4px;margin:0}
+.dua-title{font:700 clamp(17px,3.6vw,23px) "Geeza Pro","Noto Naskh Arabic",sans-serif;color:var(--gold2);margin:0;line-height:1.6}
+.rule{width:150px;height:1px;background:linear-gradient(90deg,transparent,#c8a96d99,transparent);position:relative;margin:1px 0}
+.rule span{height:5px;width:5px;position:absolute;top:-2px;left:calc(50% - 2px);background:var(--gold);transform:rotate(45deg)}
+.dua-text{min-width:0;width:100%;max-width:620px;font-size:var(--dua-size);font-weight:800;line-height:2.08;color:var(--ivory);margin:10px 0 6px;white-space:pre-wrap;overflow-wrap:anywhere;hyphens:none;direction:rtl}
+.dua-source{color:var(--gold2);font-size:14px;font-weight:600;margin:4px 0 0;line-height:1.8}
+.dua-source:empty{display:none}
+.end-flower{width:38px;height:18px;position:relative;margin-top:12px}
+.end-flower:after{content:"";position:absolute;left:17px;top:6px;width:6px;height:6px;background:#c9a96b75;transform:rotate(45deg)}
+.footer{min-height:70px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;border-top:1px solid #a789573d}
+.instruction{font:500 11px system-ui,sans-serif;color:#d0c5b2;text-align:center}
+.bar-track{display:block;width:130px;height:2px;border-radius:4px;background:#8673535b;direction:ltr;overflow:hidden}
+.bar-progress{display:block;background:var(--gold2);height:100%;width:0;transition:width .18s}
+@media(min-width:600px){.dua-card{padding-left:45px;padding-right:45px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
