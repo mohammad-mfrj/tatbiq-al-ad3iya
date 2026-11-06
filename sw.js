@@ -1,4 +1,4 @@
-const CACHE_NAME = "layali-sakina-v4";
+const CACHE_NAME = "layali-sakina-v5";
 const CORE = [
   "./", "./index.html", "./style.css", "./app.js", "./data.json",
   "./icon-192.png", "./icon-512.png", "./manifest.webmanifest"
