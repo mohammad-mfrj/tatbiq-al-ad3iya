@@ -73,11 +73,10 @@ body{font-family:"Geeza Pro","Noto Naskh Arabic",Tahoma,serif;background:var(--b
 }
 .progress-inner{
   width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 45% 30%,#1c344b,#101d2d 77%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  display:flex;align-items:center;justify-content:center;
   box-shadow:inset 0 0 0 1px #d0a96a44
 }
-.progress-number{font:700 28px/1.12 system-ui,sans-serif;color:var(--ivory);font-variant-numeric:tabular-nums;direction:ltr}
-.progress-total{font:600 11px/1.65 "Geeza Pro",system-ui,sans-serif;color:var(--gold2);direction:rtl}
+.progress-number{font:700 32px/1 system-ui,sans-serif;color:var(--ivory);font-variant-numeric:tabular-nums;direction:ltr}
 .instruction{font:500 11px/1.7 system-ui,"Geeza Pro",sans-serif;color:#bdb2a1;text-align:center;margin:0}
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(min-width:600px){.dua-card{padding-left:45px;padding-right:45px}}

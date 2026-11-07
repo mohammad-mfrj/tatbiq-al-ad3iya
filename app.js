@@ -1,14 +1,14 @@
 "use strict";
 const $=id=>document.getElementById(id);
 const card=$("touchSurface"),counter=$("counter"),title=$("duaTitle"),text=$("duaText"),source=$("duaSource");
-const pageNumber=$("pageNumber"),pageTotal=$("pageTotal"),ring=$("progressRing"),prev=$("prevBtn"),next=$("nextBtn");
+const pageNumber=$("pageNumber"),ring=$("progressRing"),prev=$("prevBtn"),next=$("nextBtn");
 let items=[],index=0,start=null,lastGestureAt=0;
 const clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
 const save=()=>localStorage.setItem("layali.lastPrayer",items[index]?.id||"");
 function render(){
   if(!items.length){
     title.textContent="أدعية";text.textContent="لا توجد أدعية معتمدة حاليًا.";
-    counter.textContent="0 / 0";pageNumber.textContent="00";pageTotal.textContent="من 00";
+    counter.textContent="0 / 0";pageNumber.textContent="0";
     prev.disabled=true;next.disabled=true;return;
   }
   const item=items[index],number=index+1,total=items.length;
@@ -16,8 +16,7 @@ function render(){
   text.textContent=item.text;
   source.textContent=item.source||"";
   counter.textContent=number+" / "+total;
-  pageNumber.textContent=String(number).padStart(2,"0");
-  pageTotal.textContent="من "+total;
+  pageNumber.textContent=String(number);
   ring.style.setProperty("--progress",(number/total*100)+"%");
   ring.setAttribute("aria-valuemax",String(total));
   ring.setAttribute("aria-valuenow",String(number));
