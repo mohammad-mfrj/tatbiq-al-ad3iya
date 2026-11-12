@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+ <meta name="theme-color" content="#0b1626">
+ <meta name="robots" content="noindex,nofollow,noarchive">
+ <meta name="description" content="إدارة الأدعية الشخصية ومراجعة القائمة المختارة">
+ <link rel="stylesheet" href="./dashboard.css">
+ <link rel="icon" href="./icon-192.png" type="image/png">
+ <title>إدارة الأدعية | أدعية</title>
+</head>
+<body>
+ <div class="shell">
+  <header class="topbar">
+   <div><a class="back" href="./">العودة للقراءة</a><p class="eyebrow">أدعية</p><h1>إدارة الأدعية</h1><p class="lede">اختر الأدعية المناسبة، وعدّل النصوص، وأضف أدعيتك الجديدة من مكان واحد.</p></div>
+   <button class="gold-button" id="addBtn" type="button">إضافة دعاء</button>
+  </header>
+  <section class="overview" aria-label="ملخص المكتبة">
+    <div class="stat"><span>المختارة للقراءة</span><strong id="selectedCount">25</strong><small>الحد المسموح 20–30</small></div>
+    <div class="stat"><span>في المكتبة</span><strong id="libraryCount">69</strong><small>تستطيع إعادة الاختيار</small></div>
+    <div class="stat"><span>مستبعدة من القراءة</span><strong id="archiveCount">44</strong><small>تبقى محفوظة</small></div>
+  </section>
+  <section class="advice" aria-label="ملاحظات مهمة">
+    <div><strong>ترشيحي: 25 دعاءً متنوعًا</strong><p>تفضيل الأدعية الأقصر والأوضح، مع تنويع موضوعاتها. هذا ترشيح تنظيمي، وليس توثيقًا شرعيًا لمصدر الدعاء أو حكمًا على صحته.</p></div>
+    <button type="button" class="outline-button" id="recommendBtn">اختيار الترشيحات الـ25</button>
+  </section>
+  <div class="toolbar">
+    <label class="search"><span class="sr-only">البحث عن دعاء</span><input id="searchInput" type="search" placeholder="ابحث بعنوان الدعاء أو داخل النص..." autocomplete="off"></label>
+    <label class="filter-label">عرض
+    <select id="filterSelect"><option value="all">كل المكتبة</option><option value="active">المختارة للقراءة</option><option value="archive">غير المختارة</option><option value="deleted">المحذوفة</option><option value="recommended">المقترحة للإبقاء</option></select></label>
+  </div>
+  <p class="list-heading" id="resultsLine" aria-live="polite">جاري تحميل المكتبة...</p>
+  <section id="entries" class="entries" aria-label="قائمة الأدعية"></section>
+  <footer class="actions">
+   <div class="actions-text"><strong id="statusText">تعديلاتك لم تُحفظ بعد</strong><span>الحفظ على هذا الجهاز فقط. لتطبيق التغييرات على بقية الأجهزة، صدّر النسخة واطلب نشرها على GitHub.</span></div>
+   <div class="action-buttons">
+     <button id="downloadBtn" class="outline-button" type="button">تصدير نسخة احتياطية</button>
+     <label class="outline-button import-label" for="importInput">استيراد نسخة<input id="importInput" type="file" accept="application/json,.json" hidden></label>
+     <button id="resetBtn" class="ghost-button" type="button">التراجع</button>
+     <button id="saveBtn" class="gold-button" type="button">حفظ التغييرات</button>
+   </div>
+  </footer>
+ </div>
+ <dialog id="editor" class="editor-dialog" aria-labelledby="editorHeading">
+  <form id="editorForm">
+    <header><h2 id="editorHeading">إضافة دعاء</h2><button class="close-editor" id="closeEditor" type="button" aria-label="إغلاق">×</button></header>
+    <label>عنوان الدعاء<input id="editTitle" maxlength="140" required placeholder="مثال: دعاء الفرج"></label>
+    <label>نص الدعاء<textarea id="editText" rows="9" maxlength="20000" required placeholder="اكتب الدعاء هنا دون رموز تعبيرية"></textarea></label>
+    <p class="form-hint" id="editorHint">سيبقى النص محفوظًا على جهازك ويمكن تصديره.</p>
+    <div class="form-actions"><button type="button" class="outline-button" id="cancelEditor">إلغاء</button><button type="submit" class="gold-button">حفظ الدعاء</button></div>
+  </form>
+ </dialog>
+ <script src="./store.js"></script><script src="./dashboard.js"></script>
+</body>
+</html>
