@@ -1,0 +1,4 @@
+.top{position:relative}
+.manage-link{position:absolute;inset-inline-end:0;top:50%;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;padding:8px 11px;color:#e5cb94;background:#c8a96d12;border:1px solid #c8a96d4a;border-radius:11px;text-decoration:none;font:700 12px/1.4 system-ui,"Geeza Pro",sans-serif}
+.manage-link:focus-visible{outline:2px solid #e5cb94;outline-offset:2px}
+@media(max-width:365px){.manage-link{font-size:11px;padding:7px 8px}}
